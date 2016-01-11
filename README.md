@@ -59,3 +59,7 @@ CustomPopup.createAlert(context, cancelable, btType, title, content, leftBtnText
 					
 					CustomPopup.createAlert(PopupActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "CANCEL", listener);
 ```
+
+#ScreenShots
+![](Screenshot/one_button.png)
+![](Screenshot/two_button.png)
