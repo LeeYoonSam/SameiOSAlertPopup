@@ -17,21 +17,10 @@ import android.widget.TextView;
 public class CustomPopup extends Dialog {
 
 	/*
-	 * Define PopupType
-	 */
-	public static final int POPUPTYPE_TXT = 1;
-
-	/*
 	 * Define ButtonType
 	 */
 	public static final int TYPE_OWN_BTN = 1;
 	public static final int TYPE_TWO_BTN = 2;
-
-	/*
-	 * PopupType
-	 */
-	int mPopupType;
-	String mImgURL;
 
 	/*
 	 * ButtonType 
@@ -58,29 +47,15 @@ public class CustomPopup extends Dialog {
 	ImageView ivPopup = null;
 	EditText etPassword = null;
 
-	CommPopupListener mPopupListener = null;
+	CustomPopupListener mPopupListener = null;
 
 	// Button id array
 	int[] mBtnIds = {R.id.btPopupLeft, R.id.btPopupRight};
 
-	/*
-	 * SET textalign
-	 */
-	public void setTxtAlignCenter(boolean is) {
-		if(is) {
-			tvPopupTitle.setGravity(Gravity.CENTER_HORIZONTAL);
-			tvPopupContent.setGravity(Gravity.CENTER_HORIZONTAL);
-		}
-		else {
-			tvPopupTitle.setGravity(Gravity.NO_GRAVITY);
-			tvPopupContent.setGravity(Gravity.NO_GRAVITY);
-		}
-	}
-
-	public static void createAlert(Context context, int popupType, int btType, String title, String content, String leftBtnText, String rightBtnText, CommPopupListener listener, boolean cancelable) {
+	public static void createAlert(Context context, boolean cancelable, int btType, String title, String content, String leftBtnText, String rightBtnText, CustomPopupListener listener) {
 		try
 		{
-			CustomPopup popup = new CustomPopup(context, popupType, btType, title, content, leftBtnText, rightBtnText, listener);
+			CustomPopup popup = new CustomPopup(context, btType, title, content, leftBtnText, rightBtnText, listener);
 			popup.setCancelable(cancelable);
 			popup.show();
 		}
@@ -93,11 +68,10 @@ public class CustomPopup extends Dialog {
 	/*
 	 * Init Dialog
 	 */
-	public CustomPopup(Context context, int popupType, int btType, String title, String content, String leftBtnText, String rightBtnText, CommPopupListener listener) {
+	public CustomPopup(Context context, int btType, String title, String content, String leftBtnText, String rightBtnText, CustomPopupListener listener) {
 		super(context , android.R.style.Theme_Translucent_NoTitleBar);
 
 		_context = context;
-		mPopupType = popupType;
 		mBtType = btType;
 		mTitle = title;
 		mContent = content;
@@ -163,11 +137,15 @@ public class CustomPopup extends Dialog {
 		{
 			findViewById(mBtnIds[0]).setVisibility(View.VISIBLE);
 			findViewById(mBtnIds[1]).setVisibility(View.GONE);
+			
+			findViewById(R.id.vHorizontalLine).setVisibility(View.GONE);
 		}
 		else if(mBtType == 2)
 		{
 			findViewById(mBtnIds[0]).setVisibility(View.VISIBLE);
 			findViewById(mBtnIds[1]).setVisibility(View.VISIBLE);
+			
+			findViewById(R.id.vHorizontalLine).setVisibility(View.VISIBLE);
 		}
 
 		// button set cliclistener
@@ -278,9 +256,9 @@ public class CustomPopup extends Dialog {
 	}
 
 	// you need to method override
-	public static class CommPopupListener implements PopupListener 
+	public static class CustomPopupListener implements PopupListener 
 	{
-		public CommPopupListener() {}
+		public CustomPopupListener() {}
 
 		@Override
 		public void onLeftClick(CustomPopup dialogPopup) {}

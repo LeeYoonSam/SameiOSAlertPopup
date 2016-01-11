@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="30dp"
-        android:background="#FFF"
+        android:background="@drawable/rectengle_corner_round"
         android:orientation="vertical"
         android:padding="1dp" >
 
@@ -102,6 +102,7 @@
                     android:textSize="14sp" />
 
                 <View
+                    android:id="@+id/vHorizontalLine"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="#dedede" />
