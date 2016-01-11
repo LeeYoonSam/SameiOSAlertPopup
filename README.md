@@ -42,3 +42,19 @@ CustomPopup.createAlert(context, cancelable, btType, title, content, leftBtnText
 		      	@Override
 		      	public void onBackPressed() {}
 		    	}
+		    	
+		    	
+		    	ex)
+		    	// set listener
+					CustomPopupListener listener = new CustomPopupListener()
+					{
+						public void onLeftClick(CustomPopup dialogPopup) {
+							Toast.makeText(getApplicationContext(), "Click - OK", Toast.LENGTH_SHORT).show();
+						};
+						
+						public void onRightClick(CustomPopup dialogPopup) {
+							Toast.makeText(getApplicationContext(), "Click - CANCEL", Toast.LENGTH_SHORT).show();
+						};
+					};
+					
+					CustomPopup.createAlert(PopupActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "CANCEL", listener);
