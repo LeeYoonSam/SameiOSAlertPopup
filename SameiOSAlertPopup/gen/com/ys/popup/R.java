@@ -9,35 +9,35 @@ package com.ys.popup;
 
 public final class R {
     public static final class anim {
-        public static final int anim_popup_enter=0x7f040000;
-        public static final int anim_popup_exit=0x7f040001;
+        public static int anim_popup_enter=0x7f040000;
+        public static int anim_popup_exit=0x7f040001;
     }
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int rectengle_corner_round=0x7f020001;
+        public static int ic_launcher=0x7f020000;
+        public static int rectengle_corner_round=0x7f020001;
     }
     public static final class id {
-        public static final int btPopupLeft=0x7f060007;
-        public static final int btPopupRight=0x7f060009;
-        public static final int ivPopup=0x7f060006;
-        public static final int llPopupContainer=0x7f060003;
-        public static final int tvPopupContent=0x7f060005;
-        public static final int tvPopupTitle=0x7f060004;
-        public static final int tvSubTitle=0x7f060001;
-        public static final int tvTitle=0x7f060000;
-        public static final int vHorizontalLine=0x7f060008;
-        public static final int vPopup=0x7f060002;
+        public static int btPopupLeft=0x7f060007;
+        public static int btPopupRight=0x7f060009;
+        public static int ivPopup=0x7f060006;
+        public static int llPopupContainer=0x7f060003;
+        public static int tvPopupContent=0x7f060005;
+        public static int tvPopupTitle=0x7f060004;
+        public static int tvSubTitle=0x7f060001;
+        public static int tvTitle=0x7f060000;
+        public static int vHorizontalLine=0x7f060008;
+        public static int vPopup=0x7f060002;
     }
     public static final class layout {
-        public static final int act_popup=0x7f030000;
-        public static final int cell_base=0x7f030001;
-        public static final int popup_base=0x7f030002;
+        public static int act_popup=0x7f030000;
+        public static int cell_base=0x7f030001;
+        public static int popup_base=0x7f030002;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
-        public static final int btn_show=0x7f050001;
-        public static final int cancelable=0x7f050002;
+        public static int app_name=0x7f050000;
+        public static int btn_show=0x7f050001;
+        public static int cancelable=0x7f050002;
     }
 }
