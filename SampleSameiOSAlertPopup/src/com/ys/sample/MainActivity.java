@@ -1,4 +1,4 @@
-package com.ys.popup;
+package com.ys.sample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,9 +13,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.ys.popup.CustomPopup;
 import com.ys.popup.CustomPopup.CustomPopupListener;
 
-public class PopupActivity extends ListActivity {
+public class MainActivity extends ListActivity {
 
 	private static final String ITEM_TITLE = "item_title";
 	private static final String ITEM_SUBTITLE = "item_subtitle";
@@ -27,7 +28,7 @@ public class PopupActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_popup);
+		setContentView(R.layout.activity_main);
 
 		{
 			final Map<String, Object> item = new HashMap<String, Object>();
@@ -57,7 +58,7 @@ public class PopupActivity extends ListActivity {
 
 				if(btnType == CustomPopup.TYPE_OWN_BTN)
 				{
-					CustomPopup.createAlert(PopupActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "", null);
+					CustomPopup.createAlert(MainActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "", null);
 					
 				}
 				else if(btnType == CustomPopup.TYPE_TWO_BTN)
@@ -74,7 +75,7 @@ public class PopupActivity extends ListActivity {
 						};
 					};
 					
-					CustomPopup.createAlert(PopupActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "CANCEL", listener);
+					CustomPopup.createAlert(MainActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "CANCEL", listener);
 				}				
 			}
 		});

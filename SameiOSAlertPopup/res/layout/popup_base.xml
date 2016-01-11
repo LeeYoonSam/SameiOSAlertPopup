@@ -97,7 +97,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:padding="10dp"
-                    android:text="확인"
+                    android:text="OK"
                     android:textColor="#0b7dfd"
                     android:textSize="14sp" />
 
@@ -114,7 +114,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:padding="10dp"
-                    android:text="취소"
+                    android:text="CANCEL"
                     android:textColor="#0b7dfd"
                     android:textSize="14sp" />
             </LinearLayout>

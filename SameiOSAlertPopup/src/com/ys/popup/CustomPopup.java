@@ -3,7 +3,6 @@ package com.ys.popup;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -116,20 +115,26 @@ public class CustomPopup extends Dialog {
 			}
 		}
 
-		// set button text
-		for (int ids : mBtnIds) {
-			Button v = (Button)findViewById(ids);
+		
+		try
+		{
+			// set button text
+			for (int ids : mBtnIds) {
+				Button v = (Button)findViewById(ids);
 
-			if(v != null) {
-				switch (ids) {
-				case R.id.btPopupLeft:
+				if(ids == R.id.btPopupLeft)
+				{
 					v.setText(mBtnLeft);
-					break;
-				case R.id.btPopupRight:
-					v.setText(mBtnRight);
-					break;
 				}
-			}
+				else if(ids == R.id.btPopupRight)
+				{
+					v.setText(mBtnRight);
+				}
+			}	
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
 		}
 
 		// button visibility setting
@@ -278,9 +283,8 @@ public class CustomPopup extends Dialog {
 		@Override
 		public void onClick(View v) {
 
-			switch (v.getId()) {
-
-			case R.id.btPopupLeft:
+			if(v.getId() == R.id.btPopupLeft)
+			{
 				if(mPopupListener != null)
 				{
 					try
@@ -290,24 +294,24 @@ public class CustomPopup extends Dialog {
 					catch (Exception e)
 					{
 						e.printStackTrace();
-
-						if(mPopupListener != null)
-							mPopupListener.onLeftClick(CustomPopup.this);
 					}
 				}
-
-				break;
-
-
-			case R.id.btPopupRight:
+			}
+			else if(v.getId() == R.id.btPopupRight)
+			{
 				if(mPopupListener != null)
 				{
-					mPopupListener.onRightClick(CustomPopup.this);
+					try
+					{
+						mPopupListener.onRightClick(CustomPopup.this);
+					}
+					catch (Exception e)
+					{
+						e.printStackTrace();
+					}
 				}
-
-				break;
 			}
-
+			
 			CustomPopup.this.dismiss();
 		}
 	};
