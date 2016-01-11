@@ -42,10 +42,9 @@ CustomPopup.createAlert(context, cancelable, btType, title, content, leftBtnText
 		      	@Override
 		      	public void onBackPressed() {}
 		    	}
-```
 		    	
 		    	Use
-		    	```
+		    	
 		    	// set listener
 					CustomPopupListener listener = new CustomPopupListener()
 					{
