@@ -7,7 +7,7 @@ It Easily available.
 You can use like next.
 
 CustomPopup.createAlert(context, cancelable, btType, title, content, leftBtnText, rightBtnText, listener);
-
+```
 		context - your context.
 		
 		btType - select button type.
@@ -42,9 +42,10 @@ CustomPopup.createAlert(context, cancelable, btType, title, content, leftBtnText
 		      	@Override
 		      	public void onBackPressed() {}
 		    	}
+```
 		    	
-		    	
-		    	ex)
+		    	Use
+		    	```
 		    	// set listener
 					CustomPopupListener listener = new CustomPopupListener()
 					{
@@ -58,3 +59,4 @@ CustomPopup.createAlert(context, cancelable, btType, title, content, leftBtnText
 					};
 					
 					CustomPopup.createAlert(PopupActivity.this, true, btnType, "", (String)data.get(position).get(ITEM_TITLE), "OK", "CANCEL", listener);
+```
